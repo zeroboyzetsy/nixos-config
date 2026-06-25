@@ -18,6 +18,7 @@
   # CachyOS-ядро подключается через flake.nix (chaotic-nyx)
   # Здесь только параметры ядра под UM5606WA:
   boot.kernelParams = [
+    boot.kernelPackages = pkgs.linuxPackages_cachyos;
     "amdgpu.dcdebugmask=0x200"   # отключить PSR2-SU (баг зависания на Strix Point)
     "nowatchdog"                  # отключить watchdog
     # Если будешь применять EDID-фикс (vblank=40 для 120 Гц):
